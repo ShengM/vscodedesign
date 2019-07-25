@@ -1,4 +1,4 @@
-import { Emitter, Event } from 'base/common/event';
+import { Emitter, Event } from './base/common/event';
 
 class Document1 {
   private _onDidChange = new Emitter<string>();
@@ -21,6 +21,7 @@ class Counter {
 
   public onEvent(): void {
     this._count++;
+    console.log('count:', this._count);
   }
 }
 
@@ -28,3 +29,8 @@ let counter = new Counter();
 let doc = new Document1();
 let subscription = doc.onDidChange(counter.onEvent, counter);
 
+doc.setText('hello');
+doc.setText('world');
+doc.setText('python');
+
+subscription.dispose();
