@@ -1,4 +1,5 @@
 import { Emitter, Event } from './base/common/event';
+import { IDisposable } from './base/common/lifecycle';
 
 class Document1 {
   private _onDidChange = new Emitter<string>();
@@ -27,10 +28,13 @@ class Counter {
 
 let counter = new Counter();
 let doc = new Document1();
-let subscription = doc.onDidChange(counter.onEvent, counter);
+let bucket: IDisposable[] = [];
+let subscription = doc.onDidChange(counter.onEvent, counter, bucket);
 
 doc.setText('hello');
+
+bucket.pop().dispose();
 doc.setText('world');
-doc.setText('python');
 
 subscription.dispose();
+doc.setText('python');
