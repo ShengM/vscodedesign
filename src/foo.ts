@@ -1,4 +1,4 @@
-import { Emitter, Event } from './base/common/event';
+import { Emitter, Event, setGlobalLeakWarningThreshold } from './base/common/event';
 import { IDisposable } from './base/common/lifecycle';
 
 class Document1 {
@@ -20,11 +20,14 @@ class Counter {
     this._count = 0;
   }
 
-  public onEvent(): void {
+  public onEvent(eventArg: string): void {
+    console.log('eventArg:', eventArg);
     this._count++;
     console.log('count:', this._count);
   }
 }
+
+setGlobalLeakWarningThreshold(50);
 
 let counter = new Counter();
 let doc = new Document1();
@@ -38,3 +41,4 @@ doc.setText('world');
 
 subscription.dispose();
 doc.setText('python');
+console.log('end');
