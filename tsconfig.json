@@ -2,15 +2,19 @@
   "compilerOptions": {
     "lib": [
       "dom",
-      "es2015"
+      "es2015",
+      "es2015.symbol",
+      "es2015.symbol.wellknown"
     ],
     "module": "commonjs",
     "target": "es2015",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./src"
   },
   "include": [
-    "./src"
+    "./src",
+    "./__test__"
   ]
 }

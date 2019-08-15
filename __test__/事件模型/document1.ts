@@ -1,4 +1,4 @@
-import { Emitter, Event } from '../base/common/event';
+import { Emitter, Event } from 'base/common/event';
 
 export class Document1 {
   private _onDidChange = new Emitter<string>();

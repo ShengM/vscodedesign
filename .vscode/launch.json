@@ -14,7 +14,10 @@
       ],
       "args": [
         "${file}"
-      ]
+      ],
+      "env": {
+        "NODE_PATH": "./src"
+      }
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { Emitter } from '../base/common/event';
+import { Emitter } from 'base/common/event';
 
 let a = new Emitter({
   onFirstListenerAdd() {

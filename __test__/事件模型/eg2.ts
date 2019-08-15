@@ -5,7 +5,7 @@
 // 5.移除事件监听1和2
 // 6.触发事件
 
-import { IDisposable, DisposableStore } from '../base/common/lifecycle';
+import { IDisposable, DisposableStore } from 'base/common/lifecycle';
 import { Document1 } from './document1';
 import { Counter } from './counter';
 
