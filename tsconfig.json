@@ -4,7 +4,7 @@
       "dom",
       "es2018"
     ],
-    "module": "amd",
+    "module": "commonjs",
     "target": "es2015",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
