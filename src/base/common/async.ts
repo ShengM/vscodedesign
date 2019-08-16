@@ -3,11 +3,11 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { CancellationToken, CancellationTokenSource } from './cancellation';
-import * as errors from './errors';
-import { Emitter, Event } from './event';
-import { IDisposable, toDisposable } from './lifecycle';
-import { URI } from './uri';
+import { CancellationToken, CancellationTokenSource } from 'base/common/cancellation';
+import * as errors from 'base/common/errors';
+import { Emitter, Event } from 'base/common/event';
+import { IDisposable, toDisposable } from 'base/common/lifecycle';
+import { URI } from 'base/common/uri';
 
 export function isThenable<T>(obj: any): obj is Promise<T> {
   return obj && typeof (<Promise<any>>obj).then === 'function';

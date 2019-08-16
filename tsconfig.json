@@ -2,9 +2,9 @@
   "compilerOptions": {
     "lib": [
       "dom",
-      "es2019"
+      "es2018"
     ],
-    "module": "commonjs",
+    "module": "amd",
     "target": "es2015",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -12,7 +12,7 @@
     "baseUrl": "./src"
   },
   "include": [
-    "./src",
-    "./__test__"
+    "./src/**/*.ts",
+    "./__test__/**/*.ts"
   ]
 }

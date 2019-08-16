@@ -3,8 +3,8 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { isWindows } from './platform';
-import { CharCode } from './charCode';
+import { isWindows } from 'base/common/platform';
+import { CharCode } from 'base/common/charCode';
 
 const _schemePattern = /^\w[\w\d+.-]*$/;
 const _singleSlashStart = /^\//;
@@ -379,7 +379,7 @@ export class URI implements UriComponents {
   static revive(data: UriComponents | URI | undefined | null): URI | undefined | null;
   static revive(data: UriComponents | URI | undefined | null): URI | undefined | null {
     if (!data) {
-      return data;
+      return;
     } else if (data instanceof URI) {
       return data;
     } else {
